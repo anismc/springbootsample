@@ -1,0 +1,40 @@
+server:
+  port: 9001 
+  servlet:
+    context-path: /circuite
+spring:
+  application:
+    name: resilience-service
+  profiles:
+    active: dev
+  cloud:
+    config:
+      uri:
+      - http://localhost:8089
+      import: optional
+      enabled: false
+resilience4j:
+  circuitbreaker:
+    instances:
+      service_A:
+        registerHealthIndicator: true
+        eventConsumerBufferSize: 10
+        failureRateThreshold: 50
+        minimumNumberOfCalls: 5
+        automaticTransitionFromOpenToHalfOpenEnabled: true
+        waitDurationInOpenState: 5s
+        permittedNumberOfCallsInHalfOpenState: 3
+        slidingWindowSize: 10
+        slidingWindowType: COUNT_BASED
+#This below is for actuator
+management:
+  health:
+    circuitbreakers:
+      enabled: true
+  endpoints:
+    web:
+      exposure:
+        include: health
+  endpoint:
+    health:
+      show-details: always

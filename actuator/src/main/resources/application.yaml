@@ -1,0 +1,25 @@
+# Spring Boot application properties
+spring:
+  application:
+    name: actuator  # Change to your microservice name
+
+# Actuator endpoints configuration
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"  # Expose all Actuator endpoints over HTTP
+  endpoint:
+    health:
+      show-details: always  # Show detailed health information
+    metrics:
+      enabled: true  # Enable metrics endpoint
+  info:
+    app:
+      name: actuator  # Custom information about your microservice
+    #build:
+      #version: 1.0.0  # Custom version information
+
+# Server configuration (if needed)
+server:
+  port: 9898  # Customize the HTTP port for the Actuator microservice

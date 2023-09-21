@@ -1,0 +1,16 @@
+server:
+  port: 8090
+eureka:
+  instance:
+    lease-renewal-interval-in-seconds: 1
+    lease-expiration-duration-in-seconds: 3
+    hostname: localhost
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8087/eureka
+spring:
+  application:
+    name: loadbalancer-service
+info:
+  app:
+    name: loadbalancer-service

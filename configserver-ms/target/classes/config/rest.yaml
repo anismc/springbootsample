@@ -1,0 +1,5 @@
+rest:
+  message: hi welcome msg 
+  buid-version: 3
+  mail: default@email.com
+  subject: hello default

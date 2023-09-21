@@ -1,0 +1,29 @@
+server:
+  port: 9010
+spring:
+  application:
+    name: rabbitmq-service
+  profiles:
+    active: dev
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
+  cloud:
+    config:
+      enabled: false
+      import-check:
+        enabled: false
+#eureka:
+#  instance:
+#    lease-renewal-interval-in-seconds: 1
+#    lease-expiration-duration-in-seconds: 3
+#    hostname: localhost
+#  client:
+#    serviceUrl:
+#      defaultZone: http://localhost:8087/eureka
+info:
+  app:
+    name: rabbitmq-service
+   

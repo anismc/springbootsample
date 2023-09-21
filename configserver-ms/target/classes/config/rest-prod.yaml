@@ -1,0 +1,5 @@
+rest:
+  message: hi welcome PROD msg 
+  buid-version: 3
+  mail: PROD@email.com
+  subject: hello PROD

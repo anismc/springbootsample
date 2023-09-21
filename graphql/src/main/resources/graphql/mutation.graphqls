@@ -1,0 +1,15 @@
+type Mutation {
+  createRestaurant(name: String!, cuisineType: String!): Restaurant
+  createBill(restaurantId: ID!, amount: Float!, billDate: String!): Bill
+}
+
+input RestaurantInput {
+  name: String!
+  cuisineType: String!
+}
+
+input BillInput {
+  restaurantId: ID!
+  billDate: String!
+  amount: Float!
+}

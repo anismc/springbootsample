@@ -1,0 +1,27 @@
+server:
+  port: 0
+  servlet:
+    context-path: /billms
+eureka:
+  instance:
+    lease-renewal-interval-in-seconds: 1
+    lease-expiration-duration-in-seconds: 3
+    hostname: localhost
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8087/eureka
+info:
+  app:
+    name: bill-service
+spring:
+  application:
+    name: bill-service
+  profiles:
+    active: dev 
+  cloud:
+    config:
+      import-check.enabled: false
+      uri:
+      - http://localhost:8089
+      enabled: false
+      

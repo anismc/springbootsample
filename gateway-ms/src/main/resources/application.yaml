@@ -1,0 +1,31 @@
+server:
+  port: 8088
+  compression:
+    excluded-user-agents:
+eureka:
+  instance:
+    lease-renewal-interval-in-seconds: 1
+    lease-expiration-duration-in-seconds: 3
+    hostname: localhost
+  client:
+    service-url:
+      defaultZone: http://127.0.0.1:8087/eureka
+info:
+  app:
+    name: gateway-service
+spring:
+  application:
+    name: gateway-service
+  cloud:
+    gateway:
+      routes:
+      - id: restr-service
+        uri: lb://RESTR-SERVICE
+        predicates: 
+        - Path=/restrms/*
+      - id: bill-service
+        uri: lb://BILL-SERVICE
+        predicates:
+        - Path=/billms/*
+        
+          

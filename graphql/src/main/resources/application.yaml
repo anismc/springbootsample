@@ -1,0 +1,12 @@
+server:
+  port: 9003
+spring:
+  datasource:
+    url: jdbc:h2:mem:testdb
+    driverClassName: org.h2.Driver
+    username: sa
+    password: password
+graphql:
+  servlet:
+    mapping: /graphql
+    enabled: true

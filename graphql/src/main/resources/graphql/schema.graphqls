@@ -1,0 +1,19 @@
+type Restaurant {
+	id: ID!
+	name: String!
+	cuisineType: String!
+	bills: Bill!
+}
+type Bill {
+    id: ID!
+    amount: Float!
+    billDate: String!
+}
+
+type Query {
+    restaurant(id: ID!): Restaurant
+    restaurants: [Restaurant]
+}
+
+
+

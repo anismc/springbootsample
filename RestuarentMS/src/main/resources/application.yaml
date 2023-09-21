@@ -1,0 +1,26 @@
+server:
+  port: 8081
+  compression:
+    excluded-user-agents:
+eureka:
+  instance:
+    lease-renewal-interval-in-seconds: 1
+    lease-expiration-duration-in-seconds: 3
+    hostname: localhost
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8087/eureka
+info:
+  app:
+    name: restr-service
+spring:
+  application:
+    name: restr-service
+  profiles:
+    active: dev
+  cloud:
+    config:
+      uri:
+      - http://localhost:8089
+      import: optional
+      enabled: false
